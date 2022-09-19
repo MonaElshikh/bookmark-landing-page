@@ -1,0 +1,19 @@
+include _mixins
+.downloads
+    .container
+        h2 Download the extension
+        p We've got more browsers in the pipline.
+            | Please do let us know if you've got a favourite you'd like us to prioritize.
+        .browsers   
+            +browser("./src/assets/images/logo-chrome.svg",
+            "Add to Chrome",
+            "Minimum version 62",
+            "./src/assets/images/bg-dots.svg")
+            +browser("./src/assets/images/logo-firefox.svg",
+            "Add to Chrome",
+            "Minimum version 55",
+            "./src/assets/images/bg-dots.svg")
+            +browser("./src/assets/images/logo-opera.svg",
+            "Add to Chrome",
+            "Minimum version 46",
+            "./src/assets/images/bg-dots.svg")

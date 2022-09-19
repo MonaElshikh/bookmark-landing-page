@@ -1,0 +1,52 @@
+@use "helpers/mixns.scss";
+.landing {
+  @include mixns.position($position: relative);
+  padding: 50px 0;
+  overflow: hidden;
+  &::before {
+    @include mixns.blueBackground(
+      $top: 200px,
+      $right: 0,
+      $width: 765px,
+      $height: 525px,
+      $bgColor: var(--soft-blue),
+      $radius: 157px
+    );
+  }
+  .container {
+    .landing-img,
+    .landing-content {
+      text-align: center;
+    }
+    .landing-img {
+      img {
+        width: 100%;
+      }
+    }
+    h1 {
+      font-size: 60px;
+      letter-spacing: 2px;
+      margin: 70px auto 40px;
+      color: var(--very-dark-blue);
+    }
+    .landing-btns {
+      text-align: center;
+      margin-top: 50px;
+      button {
+        padding: 30px 20px;
+        border-radius: 10px;
+        border: none;
+        margin-inline: 20px;
+        margin-top: 30px;
+        width: 370px;
+        font-size: 22px;
+        letter-spacing: 2px;
+        box-shadow: 0px 0px 25px -1px var(--grayish-blue);
+      }
+      button:first-child {
+        background-color: var(--soft-blue);
+        color: white;
+      }
+    }
+  }
+}

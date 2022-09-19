@@ -1,0 +1,25 @@
+//- this mixin is for adding a tab in features section
+//- it takes the img src, the feature title and feature content
+mixin featureTab(imgSrc,title,content,className="") 
+    div(class=`tab-content ${className}` )
+        .img #[img(src=imgSrc alt="tab-img")]
+        .data 
+            h3 #{title}
+            p   #{content}
+            button(class="hide") More info
+
+mixin browser(browserImg,title,version,separatorImg)   
+    .browser
+        img(src=browserImg alt="browser")
+        h3 #{title}
+        p #{version}
+        img(src=separatorImg alt="separator")
+        button Add & Instaall Extension
+
+mixin FAQ (ques,content)
+    div.question
+        div.head
+            span #{ques}
+            img(src='./src/assets/images/icon-arrow.svg')
+        div.content  #[p #{content}]
+

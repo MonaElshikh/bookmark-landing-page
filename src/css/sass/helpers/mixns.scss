@@ -1,0 +1,80 @@
+@mixin display(
+  $display,
+  $direction: false,
+  $align: false,
+  $justify: false,
+  $wrap: false
+) {
+  display: $display;
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+}
+@mixin position(
+  $position,
+  $top: false,
+  $right: false,
+  $bottom: false,
+  $left: false,
+  $z-index: false
+) {
+  position: $position;
+  @if ($top) {
+    top: $top;
+  }
+  @if ($right) {
+    right: $right;
+  }
+  @if ($bottom) {
+    bottom: $bottom;
+  }
+  @if ($left) {
+    left: $left;
+  }
+  @if ($z-index) {
+    z-index: $z-index;
+  }
+}
+// this mixin is for creating the ::before bg inside different section in bookmark landing page
+@mixin blueBackground(
+  $top: false,
+  $right: false,
+  $bottom: false,
+  $left: false,
+  $width,
+  $height,
+  $bgColor,
+  $radius
+) {
+  content: "";
+  @include position(
+    $position: absolute,
+    $top: $top,
+    $right: $right,
+    $bottom: $bottom,
+    $left: $left,
+    $z-index: -1
+  );
+  width: $width;
+  height: $height;
+  background-color: $bgColor;
+  @if $right==0 {
+    border-bottom-left-radius: $radius;
+  } @else {
+    border-bottom-right-radius: $radius;
+  }
+}
+@mixin mediaBreakpoints($min-width) {
+  @media (#{$min-width}) {
+    @content;
+  }
+}
