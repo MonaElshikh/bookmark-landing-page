@@ -1,0 +1,30 @@
+@use "helpers/mixns.scss";
+footer {
+  background-color: var(--very-dark-blue);
+  padding: 50px 0;
+  nav {
+    text-align: center;
+    .logo {
+      img {
+        width: 300px;
+      }
+    }
+    ul {
+      li {
+        margin: 70px auto;
+        color: white;
+        font-size: 30px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+    }
+    .foot-social {
+      @include mixns.display($display: flex, $align: center, $justify: center);
+      img {
+        @include mixns.display($display: inline-block);
+        margin-inline: 40px;
+        width: 55px;
+      }
+    }
+  }
+}

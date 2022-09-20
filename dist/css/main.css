@@ -33,6 +33,31 @@ a {
   text-decoration: none;
 }
 
+::-webkit-input-placeholder {
+  color: var(--grayish-blue);
+  letter-spacing: 2px;
+}
+
+::-moz-placeholder {
+  color: var(--grayish-blue);
+  letter-spacing: 2px;
+}
+
+:-ms-input-placeholder {
+  color: var(--grayish-blue);
+  letter-spacing: 2px;
+}
+
+::-ms-input-placeholder {
+  color: var(--grayish-blue);
+  letter-spacing: 2px;
+}
+
+::placeholder {
+  color: var(--grayish-blue);
+  letter-spacing: 2px;
+}
+
 h2 {
   font-size: 60px;
   text-transform: capitalize;
@@ -410,5 +435,107 @@ header .container .menu > ul li a {
   color: white;
   border-radius: 10px;
   margin: 30px 0;
+}
+
+.contact {
+  background-color: var(--soft-blue);
+}
+.contact .container {
+  text-align: center;
+}
+.contact .container p {
+  color: white;
+  letter-spacing: 15px;
+}
+.contact .container h2 {
+  color: white;
+  font-size: 47px;
+  letter-spacing: 9px;
+}
+.contact .container .contact-mail {
+  position: relative;
+  z-index: 2;
+  margin-top: 80px;
+}
+.contact .container .contact-mail > input,
+.contact .container .contact-mail > button {
+  display: block;
+}
+.contact .container .contact-mail > input {
+  margin: 20px auto;
+  border: solid 2px transparent;
+  border-radius: 10px;
+  padding: 35px 20px;
+  width: 80vw;
+}
+.contact .container .contact-mail > button {
+  margin: 15px auto;
+  border: none;
+  padding: 35px 20px;
+  width: 80vw;
+  border-radius: 10px;
+  background-color: var(--soft-red);
+  color: white;
+  font-size: 30px;
+}
+.contact .container .contact-mail > span:nth-child(3) {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  display: none;
+  background-color: var(--soft-red);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-size: 22px;
+}
+.contact .container .contact-mail > span:nth-child(4) {
+  position: absolute;
+  top: 80px;
+  left: 39px;
+  z-index: -1;
+  display: none;
+  background-color: var(--soft-red);
+  color: white;
+  width: 80vw;
+  border-radius: 10px;
+  padding: 20px 15px 10px;
+  text-align: left;
+  letter-spacing: 2px;
+}
+
+footer {
+  background-color: var(--very-dark-blue);
+  padding: 50px 0;
+}
+footer nav {
+  text-align: center;
+}
+footer nav .logo img {
+  width: 300px;
+}
+footer nav ul li {
+  margin: 70px auto;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+footer nav .foot-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+footer nav .foot-social img {
+  display: inline-block;
+  margin-inline: 40px;
+  width: 55px;
 }
 /*# sourceMappingURL=main.css.map */
