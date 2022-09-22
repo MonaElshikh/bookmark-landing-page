@@ -1,4 +1,4 @@
-@use "helpers/mixns.scss";
+@use "helpers/_mixns";
 .features {
   padding: 50px 0;
   text-align: center;
@@ -20,7 +20,6 @@
             font-size: 25px;
             color: var(--grayish-blue);
             letter-spacing: 1.5px;
-            font-weight: bold;
             &.active {
               color: var(--very-dark-blue);
               &::after {
@@ -80,6 +79,99 @@
         }
         .data {
           padding: 150px 50px;
+        }
+      }
+    }
+  }
+}
+/*********************************  Start Featires Media *********************************/
+@include mixns.mediaBreakpoints($min-width: "min-width:992px") {
+  .features {
+    .feat-tabs {
+      padding-top: 70px;
+      > {
+        ul {
+          @include mixns.display($display: flex, $justify: center);
+          border-top: none !important;
+          margin-inline: auto;
+          li {
+            padding: 20px 50px;
+            width: 100%;
+            span {
+              &.active {
+                &::after {
+                  width: 385px !important;
+                  bottom: -22px;
+                }
+              }
+              &:hover {
+                color: var(--soft-red);
+              }
+            }
+          }
+        }
+        .tab-content {
+          @include mixns.display($display: flex, $justify: space-around);
+          &:nth-child(2) {
+            .img {
+              &::before {
+                @include mixns.blueBackground(
+                  $top: 87px,
+                  $left: -143px,
+                  $width: 835px,
+                  $height: 400px,
+                  $bgColor: var(--soft-blue),
+                  $radius: 210px
+                );
+              }
+              img {
+                height: auto;
+                max-width: 600px !important;
+                margin-left: 130px;
+              }
+            }
+          }
+          &:nth-child(3),
+          &:nth-child(4) {
+            .img {
+              &::before {
+                @include mixns.blueBackground(
+                  $top: 87px,
+                  $left: -143px,
+                  $width: 870px,
+                  $height: 450px,
+                  $bgColor: var(--soft-blue),
+                  $radius: 210px
+                );
+              }
+              img {
+                height: auto;
+                max-width: 600px !important;
+                margin-left: 290px;
+              }
+            }
+          }
+          .data {
+            padding: 15px 30px;
+            text-align: left;
+            width: 500px;
+            h3 {
+              font-size: 30px;
+            }
+            p {
+              font-size: 22px;
+              margin-bottom: 30px;
+            }
+            button {
+              @include mixns.display($display: block !important);
+              border: none;
+              background-color: var(--soft-blue);
+              color: white;
+              padding: 20px 35px;
+              border-radius: 10px;
+              font-weight: bold;
+            }
+          }
         }
       }
     }

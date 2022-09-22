@@ -1,14 +1,13 @@
-@use "helpers/mixns.scss";
+@use "helpers/_mixns";
 /*************************************** Start Header ***************************************/
 header {
   @include mixns.position($position: relative);
   .container {
     @include mixns.display($display: flex);
     .logo {
-      width: 100px;
       padding-left: 35px;
       img {
-        width: 375px;
+        width: 190px;
       }
     }
     .menu {
@@ -69,6 +68,7 @@ header {
               width: 90vw;
               padding: 30px;
               margin: 40px auto;
+              cursor: pointer;
             }
             &.social {
               @include mixns.display(
@@ -95,4 +95,70 @@ header {
 }
 .show-aside {
   right: 0 !important;
+}
+/*************************************** Start  Header Media ***************************************/
+@include mixns.mediaBreakpoints($min-width: "min-width:992px") {
+  header {
+    .container {
+      @include mixns.display($display: flex, $align: center);
+      padding: 30px;
+      .menu {
+        > {
+          img {
+            @include mixns.display($display: none!important);
+          }
+          ul {
+            @include mixns.position(
+              $position: absolute !important,
+              $top: -10px !important,
+              $right: 100px !important
+            );
+            width: fit-content !important;
+            background-color: transparent !important;
+            > {
+              hr {
+                @include mixns.display($display: none!important);
+              }
+              li {
+                @include mixns.display($display: inline-block);
+                padding: 0 !important;
+                margin-inline: 20px;
+                cursor: pointer;
+                a {
+                  color: var(--grayish-blue) !important;
+                  font-size: 16px;
+                  letter-spacing: 1.5px;
+                  border: solid 2px transparent;
+                }
+                &:hover a {
+                  color: var(--soft-red) !important;
+                }
+              }
+              li:first-child {
+                @include mixns.display($display: none !important);
+              }
+              .social {
+                @include mixns.display($display: none!important);
+              }
+              .login a {
+                @include mixns.display($display: inline-block !important);
+                border: solid 2px transparent !important;
+                border-radius: 10px;
+                padding: 7px 35px !important;
+                width: fit-content !important;
+                background-color: var(--soft-red);
+                color: white !important;
+                margin-inline-start: 50px !important;
+                &:hover {
+                  background-color: white;
+                  color: var(--soft-red) !important;
+                  border: solid 2px var(--soft-red) !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

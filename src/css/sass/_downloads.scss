@@ -1,4 +1,4 @@
-@use "helpers/mixns.scss";
+@use "helpers/_mixns";
 .downloads {
   margin-top: 1120px;
   text-align: center;
@@ -36,6 +36,48 @@
             border: none;
             border-radius: 10px;
             margin-inline: auto;
+          }
+        }
+      }
+    }
+  }
+}
+/******************************  Start downloads media  ********************************/
+@include mixns.mediaBreakpoints($min-width: "min-width:992px") {
+  .downloads {
+    margin-top: 550px;
+    .browsers {
+      @include mixns.display($display: flex, $justify: space-between);
+      height: 600px;
+      > .browser {
+        width: 380px !important;
+        margin-inline: 20px !important;
+        margin-bottom: 20px !important;
+        padding: 20px 0 !important;
+        &:nth-child(1) {
+          align-self: flex-start;
+        }
+        &:nth-child(2) {
+          align-self: center;
+        }
+        &:nth-child(3) {
+          align-self: flex-end;
+        }
+        > {
+          img:first-child {
+            width: 200px !important;
+          }
+          img:nth-child(4) {
+            padding: 30px !important;
+          }
+          h3 {
+            font-size: 35px;
+          }
+          p {
+            font-size: 22px;
+          }
+          button {
+            padding: 20px 40px !important;
           }
         }
       }

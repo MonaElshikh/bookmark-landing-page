@@ -1,4 +1,4 @@
-@use "helpers/mixns.scss";
+@use "helpers/_mixns";
 .landing {
   @include mixns.position($position: relative);
   padding: 50px 0;
@@ -46,6 +46,54 @@
       button:first-child {
         background-color: var(--soft-blue);
         color: white;
+      }
+    }
+  }
+}
+@include mixns.mediaBreakpoints($min-width: "min-width:992px") {
+  .landing {
+    &::before {
+      height: 335px !important;
+      right: -215px !important;
+    }
+    .container {
+      @include mixns.display($display: flex);
+      .landing-img {
+        order: 2;
+        & img {
+          width: 600px;
+        }
+      }
+      .landing-content {
+        text-align: left;
+        p {
+          margin-bottom: 25px;
+        }
+        .landing-btns {
+          @include mixns.display($display: flex);
+          margin-top: 0;
+          button {
+            width: 245px;
+            padding: 20px;
+            margin-top: 20px;
+            margin-left: 0;
+            border: solid 2px transparent;
+            font-weight: bold;
+            font-size: 18px;
+            &:hover {
+              border-color: var(--soft-blue);
+              background-color: white;
+              color: var(--soft-blue);
+            }
+            &:last-child {
+              margin-left: 10px;
+              &:hover {
+                border-color: var(--very-dark-blue);
+                color: var(--very-dark-blue);
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -1,4 +1,4 @@
-@use "helpers/mixns.scss";
+@use "helpers/mixns";
 .contact {
   background-color: var(--soft-blue);
   .container {
@@ -66,6 +66,59 @@
           padding: 20px 15px 10px;
           text-align: left;
           letter-spacing: 2px;
+        }
+      }
+    }
+  }
+}
+/***************************************  Start Contact media  *******************************************/
+@include mixns.mediaBreakpoints($min-width: "min-width:992px") {
+  .contact {
+    .container {
+      padding: 100px;
+      p {
+        font-size: 20px;
+      }
+      h2 {
+        margin-inline: auto;
+        width: 750px;
+        font-size: 40px;
+      }
+      .contact-mail {
+        @include mixns.display($display: flex, $align: center);
+        margin-top: 50px;
+        > {
+          input {
+            margin: 0;
+            padding-block: 40px;
+            height: 95px;
+          }
+          button {
+            width: 350px;
+            margin-inline-start: 20px;
+            white-space: nowrap;
+            align-self: stretch;
+            font-size: 22px;
+            letter-spacing: 2px;
+          }
+          span:nth-child(3) {
+            @include mixns.position(
+              $position: absolute,
+              $right: 322px,
+              $top: 38px
+            );
+          }
+          span:nth-child(4) {
+            @include mixns.position(
+              $position: absolute,
+              $left: 0,
+              $top: 95px,
+              $z-index: -1
+            );
+            background-color: var(--soft-red);
+            color: white;
+            width: 75%;
+          }
         }
       }
     }
