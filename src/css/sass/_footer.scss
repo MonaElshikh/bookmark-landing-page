@@ -38,7 +38,7 @@ footer {
 @include mixns.mediaBreakpoints($min-width: "min-width:992px") {
   footer {
     .container {
-      padding: 30px 65px;
+      padding: 50px 65px;
       .logo {
         margin-inline-end: 80px;
         img {
@@ -53,6 +53,10 @@ footer {
             margin-inline-end: 30px;
             margin-block: 0;
             font-size: 20px;
+            &:hover {
+              color: var(--soft-red);
+              cursor: pointer;
+            }
           }
           .foot-social {
             margin-right: 0;
@@ -60,6 +64,10 @@ footer {
             img {
               width: 40px;
               margin-inline: 30px;
+              &:hover {
+                filter: grayscale(100%) brightness(40%) sepia(100%)
+                  hue-rotate(-50deg) saturate(600%) contrast(0.8);
+              }
             }
           }
         }

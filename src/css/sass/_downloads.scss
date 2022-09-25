@@ -33,7 +33,7 @@
             display: block;
             padding: 35px 127px;
             color: white;
-            border: none;
+            border: solid 2px transparent;
             border-radius: 10px;
             margin-inline: auto;
           }
@@ -78,6 +78,15 @@
           }
           button {
             padding: 20px 40px !important;
+            cursor: pointer;
+
+            &:hover {
+              @include mixns.hover(
+                $bgColor: white,
+                $color: var(--soft-blue),
+                $borderColor: var(--soft-blue)
+              );
+            }
           }
         }
       }

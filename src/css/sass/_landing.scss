@@ -81,9 +81,11 @@
             font-weight: bold;
             font-size: 18px;
             &:hover {
-              border-color: var(--soft-blue);
-              background-color: white;
-              color: var(--soft-blue);
+              @include mixns.hover(
+                $bgColor: white,
+                $color: var(--soft-blue),
+                $borderColor: var(--soft-blue)
+              );
             }
             &:last-child {
               margin-left: 10px;

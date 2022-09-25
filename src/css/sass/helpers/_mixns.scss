@@ -78,3 +78,8 @@
     @content;
   }
 }
+@mixin hover($bgColor, $color, $borderColor) {
+  background-color: $bgColor;
+  color: $color;
+  border-color: $borderColor;
+}

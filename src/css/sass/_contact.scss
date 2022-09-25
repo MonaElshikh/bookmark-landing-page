@@ -26,6 +26,10 @@
           border-radius: 10px;
           padding: 35px 20px;
           width: 80vw;
+          &.error {
+            border-color: var(--soft-red);
+            margin-bottom: 55px;
+          }
         }
         button {
           margin: 15px auto;
@@ -92,6 +96,9 @@
             margin: 0;
             padding-block: 40px;
             height: 95px;
+            &.error {
+              margin-bottom: 0;
+            }
           }
           button {
             width: 350px;
@@ -100,6 +107,14 @@
             align-self: stretch;
             font-size: 22px;
             letter-spacing: 2px;
+            border: solid 2px transparent;
+            &:hover {
+              @include mixns.hover(
+                $bgColor: white,
+                $color: var(--soft-red),
+                $borderColor: var(--soft-red)
+              );
+            }
           }
           span:nth-child(3) {
             @include mixns.position(

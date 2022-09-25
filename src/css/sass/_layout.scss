@@ -55,3 +55,10 @@ p {
 .hide {
   @include mixns.display($display: none !important);
 }
+.d-flex {
+  @include mixns.display(
+    $display: flex !important,
+    $align: center,
+    $justify: center
+  );
+}

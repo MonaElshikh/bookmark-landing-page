@@ -13,11 +13,22 @@
       .question {
         @include mixns.position($position: relative);
         overflow: hidden;
+        cursor: pointer;
+        &.active {
+          height: 290px;
+          > .content {
+            padding: 0 10px 25px;
+          }
+        }
         .head {
           @include mixns.display($display: flex);
           border-bottom: solid 1px var(--grayish-blue);
           padding: 30px 10px;
-          margin-bottom: 20px;
+          margin-bottom: 25px;
+          &:hover {
+            color: var(--soft-red);
+            cursor: pointer;
+          }
           > {
             span {
               @include mixns.display($display: inline-block);
@@ -32,6 +43,7 @@
         }
         .content {
           @include mixns.position($position: absolute, $left: 0);
+          width: 100%;
           text-align: left;
           line-height: 1.5;
           color: var(--grayish-blue);
@@ -39,14 +51,8 @@
           border-bottom: solid 1px var(--grayish-blue);
           > p {
             max-width: 100% !important;
+            width: fit-content;
           }
-        }
-        &:hover .content {
-          bottom: 0px !important;
-          padding: 20px 0;
-        }
-        &:hover {
-          height: 315px;
         }
       }
       button {

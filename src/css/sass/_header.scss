@@ -49,16 +49,14 @@ header {
                 $justify: space-between,
                 $align: center
               );
-              > img {
-                &:first-child {
-                  width: 370px;
-                  left: 34px;
-                  margin-left: 50px;
-                }
-                &:nth-child(2) {
-                  margin-right: 50px;
-                  width: 40px;
-                }
+              img:first-child {
+                width: 370px;
+                left: 34px;
+                margin-left: 50px;
+              }
+              .close {
+                margin-right: 50px;
+                width: 40px;
               }
             }
             &.login a {
@@ -96,6 +94,7 @@ header {
 .show-aside {
   right: 0 !important;
 }
+
 /*************************************** Start  Header Media ***************************************/
 @include mixns.mediaBreakpoints($min-width: "min-width:992px") {
   header {
