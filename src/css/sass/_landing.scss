@@ -1,14 +1,13 @@
-@use "helpers/_mixns";
+@use "helpers/mixns";
 .landing {
   @include mixns.position($position: relative);
-  padding: 50px 0;
   overflow: hidden;
   &::before {
     @include mixns.blueBackground(
-      $top: 200px,
+      $top: 90px,
       $right: 0,
-      $width: 765px,
-      $height: 525px,
+      $width: 305px,
+      $height: 150px,
       $bgColor: var(--soft-blue),
       $radius: 157px
     );
@@ -20,26 +19,26 @@
     }
     .landing-img {
       img {
-        width: 100%;
+        max-width: 100%;
       }
     }
     h1 {
-      font-size: 60px;
+      font-size: 24px;
       letter-spacing: 2px;
-      margin: 70px auto 40px;
+      margin: 20px auto;
       color: var(--very-dark-blue);
     }
     .landing-btns {
       text-align: center;
-      margin-top: 50px;
+      margin-top: 20px;
       button {
-        padding: 30px 20px;
+        padding: 15px;
         border-radius: 10px;
+        white-space: nowrap;
         border: none;
         margin-inline: 20px;
-        margin-top: 30px;
-        width: 370px;
-        font-size: 22px;
+        margin-top: 20px;
+        font-size: 18px;
         letter-spacing: 2px;
         box-shadow: 0px 0px 25px -1px var(--grayish-blue);
       }

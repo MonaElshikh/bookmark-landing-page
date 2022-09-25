@@ -1,15 +1,18 @@
-@use "helpers/_mixns";
+@use "helpers/mixns";
 .features {
-  padding: 50px 0;
+  h2,
+  p {
+    padding-inline: 50px;
+  }
   text-align: center;
   > .feat-tabs {
-    padding-top: 100px;
+    padding-top: 60px;
     @include mixns.position($position: relative);
     > {
       ul {
         width: 80vw;
         margin: 0 auto;
-        padding-bottom: 100px;
+        padding-bottom: 60px;
         border-top: solid 1px var(--grayish-blue);
         li {
           padding: 40px 0;
@@ -17,7 +20,6 @@
           border-bottom: solid 1px var(--grayish-blue);
           span {
             @include mixns.position($position: relative);
-            font-size: 25px;
             color: var(--grayish-blue);
             letter-spacing: 1.5px;
             &.active {
@@ -48,38 +50,45 @@
         }
         .img {
           @include mixns.position($position: relative);
+          width: 100%;
           &::before {
             @include mixns.blueBackground(
-              $top: 120px,
-              $left: 0,
-              $width: 765px,
-              $height: 500px,
+              $top: 33px,
+              $left: -20px,
+              $width: 345px,
+              $height: 210px,
               $bgColor: var(--soft-blue),
-              $radius: 210px
+              $radius: 300px
             );
           }
           img {
-            width: 85vw;
-            height: 540px;
+            width: 80vw;
             max-width: 100%;
             display: block;
-            margin: 0 auto;
-          }
-        }
-        .tab-content.two.active {
-          img::before {
-            @include mixns.blueBackground(
-              $top: 200px !important,
-              $left: 0,
-              $width: 765px,
-              $height: 550px,
-              $bgColor: var(--soft-blue),
-              $radius: 210px
-            );
+            margin: 0 auto !important;
           }
         }
         .data {
-          padding: 150px 50px;
+          padding-block: 50px;
+        }
+        &:nth-child(3),
+        &:nth-child(4) {
+          .img {
+            &::before {
+              @include mixns.blueBackground(
+                $top: 34px,
+                $left: -10px,
+                $width: 297px,
+                $height: 216px,
+                $bgColor: var(--soft-blue),
+                $radius: 300px
+              );
+            }
+            img {
+              width: 70vw;
+              margin-left: 95px !important;
+            }
+          }
         }
       }
     }

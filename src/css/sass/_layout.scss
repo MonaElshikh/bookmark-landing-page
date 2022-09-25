@@ -1,5 +1,5 @@
 /************************************************* Start Global *************************************************/
-@use "helpers/_mixns";
+@use "helpers/mixns";
 * {
   box-sizing: border-box;
 }
@@ -32,25 +32,23 @@ a {
   letter-spacing: 2px;
 }
 h2 {
-  font-size: 60px;
+  font-size: 22px;
   text-transform: capitalize;
   color: var(--very-dark-blue);
   margin-bottom: 20px;
 }
 h3 {
-  font-size: 55px;
+  font-size: 20px;
   color: var(--very-dark-blue);
   margin-bottom: 20px;
 }
 p {
   color: var(--grayish-blue);
   line-height: 1.5;
-  font-size: 28px;
-  max-width: 80vw;
   margin: 0 auto;
 }
 .container {
-  padding: 50px 60px;
+  padding: 50px;
 }
 .hide {
   @include mixns.display($display: none !important);

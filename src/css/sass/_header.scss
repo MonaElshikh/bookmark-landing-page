@@ -1,22 +1,13 @@
-@use "helpers/_mixns";
+@use "helpers/mixns";
 /*************************************** Start Header ***************************************/
 header {
   @include mixns.position($position: relative);
   .container {
     @include mixns.display($display: flex);
-    .logo {
-      padding-left: 35px;
-      img {
-        width: 190px;
-      }
-    }
     .menu {
       flex: 1;
       text-align: right;
       > {
-        img {
-          width: 40px;
-        }
         ul {
           @include mixns.position(
             $position: fixed,
@@ -37,35 +28,30 @@ header {
           }
           li {
             position: relative;
-            font-size: 18px;
-            padding: 60px 0;
-            font-size: 50px;
+            padding: 20px 0;
             letter-spacing: 8px;
             &:first-child {
               width: 100%;
-              padding: 80px 0;
+              padding: 40px 0;
               @include mixns.display(
                 $display: flex,
                 $justify: space-between,
                 $align: center
               );
               img:first-child {
-                width: 370px;
-                left: 34px;
-                margin-left: 50px;
+                margin-left: 35px;
               }
               .close {
-                margin-right: 50px;
-                width: 40px;
+                margin-right: 35px;
               }
             }
             &.login a {
               @include mixns.display($display: block);
-              border: solid 5px white;
+              border: solid 2px #fff;
               border-radius: 10px;
               width: 90vw;
-              padding: 30px;
-              margin: 40px auto;
+              padding: 15px 30px;
+              margin: auto;
               cursor: pointer;
             }
             &.social {
@@ -74,10 +60,10 @@ header {
                 $justify: center,
                 $align: center
               );
-              @include mixns.position($position: absolute, $bottom: 80px);
+              @include mixns.position($position: absolute, $bottom: 15px);
               width: 100%;
               > img {
-                width: 60px;
+                width: 35px;
                 margin-inline: 40px;
               }
             }
