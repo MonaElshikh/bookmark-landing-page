@@ -61,7 +61,7 @@ function closeAllFAQ() {
         if (!e.target.parentNode.classList.contains("head") &&
             !e.target.parentNode.classList.contains("content") &&
             !e.target.parentNode.classList.contains("question")) {
-            clearActiveStyle(questions);
+            clearActiveStyle(questions, arrowImages);
         }
     });
 }

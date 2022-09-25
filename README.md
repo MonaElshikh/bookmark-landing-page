@@ -42,7 +42,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/MonaElshikh/bookmark-landing-page]
-- Live Site URL: [Add live site URL here]
+- Live Site URL: [https://monaelshikh.github.io/bookmark-landing-page/]
 
 ## My process
 
@@ -51,7 +51,6 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 - Typescript
 - Scss

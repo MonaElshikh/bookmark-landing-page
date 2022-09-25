@@ -94,7 +94,7 @@ function closeAllFAQ() {
       !e.target.parentNode.classList.contains("content") &&
       !e.target.parentNode.classList.contains("question")
     ) {
-      clearActiveStyle(questions);
+      clearActiveStyle(questions, arrowImages);
     }
   });
 }
