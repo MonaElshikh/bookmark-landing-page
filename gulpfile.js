@@ -16,7 +16,7 @@ gulp.task("html", () => {
 gulp.task("css", () => {
     return gulp.src('src/css/main.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({ outputStyle: "compressed" }).on('error', sass.logError))
         .pipe(prefixer('last 2 versions'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/css'))
