@@ -34,9 +34,6 @@ footer {
       padding: 50px 65px;
       .logo {
         margin-inline-end: 80px;
-        img {
-          width: 190px !important;
-        }
       }
       nav {
         @include mixns.display($display: flex, $align: center);
@@ -45,7 +42,6 @@ footer {
             @include mixns.display($display: inline-block);
             margin-inline-end: 30px;
             margin-block: 0;
-            font-size: 20px;
             &:hover {
               color: var(--soft-red);
               cursor: pointer;
@@ -55,7 +51,6 @@ footer {
             margin-right: 0;
             margin-left: auto;
             img {
-              width: 40px;
               margin-inline: 30px;
               &:hover {
                 filter: grayscale(100%) brightness(40%) sepia(100%)

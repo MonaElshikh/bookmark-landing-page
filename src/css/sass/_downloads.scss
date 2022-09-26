@@ -10,7 +10,7 @@
         padding: 30px 0;
         margin-bottom: 50px;
         margin-inline: auto;
-        box-shadow: 0px 15px 25px -1px var(--grayish-blue);
+        box-shadow: 0px 3px 7px -1px var(--grayish-blue);
         > {
           img:first-child {
             max-width: 100%;
@@ -42,15 +42,26 @@
 /******************************  Start downloads media  ********************************/
 @include mixns.mediaBreakpoints($min-width: "min-width:992px") {
   .downloads {
-    margin-top: 550px;
+    margin-top: 600px;
+    .data {
+      width: 600px;
+      margin: 0 auto;
+      h2 {
+        font-size: 35px;
+      }
+      p {
+        font-size: 28px;
+      }
+    }
     .browsers {
       @include mixns.display($display: flex, $justify: space-between);
       height: 600px;
+      padding-inline: 100px;
       > .browser {
-        width: 380px !important;
+        width: 350px !important;
         margin-inline: 20px !important;
         margin-bottom: 20px !important;
-        padding: 20px 0 !important;
+        padding: 35px 0 !important;
         &:nth-child(1) {
           align-self: flex-start;
         }
@@ -62,13 +73,13 @@
         }
         > {
           img:first-child {
-            width: 200px !important;
+            width: 150px !important;
           }
           img:nth-child(4) {
             padding: 30px !important;
           }
           h3 {
-            font-size: 35px;
+            font-size: 30px;
           }
           p {
             font-size: 22px;

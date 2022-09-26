@@ -86,7 +86,8 @@ header {
   header {
     .container {
       @include mixns.display($display: flex, $align: center);
-      padding: 30px;
+      padding-inline: 100px;
+      padding-top: 30px;
       .menu {
         > {
           img {
@@ -94,12 +95,15 @@ header {
           }
           ul {
             @include mixns.position(
-              $position: absolute !important,
-              $top: -10px !important,
-              $right: 100px !important
+              $position: static !important,
+              $top: 0px !important,
+              $right: 0px !important
             );
             width: fit-content !important;
+            height: fit-content;
             background-color: transparent !important;
+            margin-left: auto;
+            margin-right: 0;
             > {
               hr {
                 @include mixns.display($display: none!important);
@@ -111,7 +115,6 @@ header {
                 cursor: pointer;
                 a {
                   color: var(--grayish-blue) !important;
-                  font-size: 16px;
                   letter-spacing: 1.5px;
                   border: solid 2px transparent;
                 }

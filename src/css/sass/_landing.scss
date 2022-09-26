@@ -40,7 +40,7 @@
         margin-top: 20px;
         font-size: 18px;
         letter-spacing: 2px;
-        box-shadow: 0px 0px 25px -1px var(--grayish-blue);
+        box-shadow: 0px 0px 7px -1px var(--grayish-blue);
       }
       button:first-child {
         background-color: var(--soft-blue);
@@ -52,19 +52,29 @@
 @include mixns.mediaBreakpoints($min-width: "min-width:992px") {
   .landing {
     &::before {
-      height: 335px !important;
-      right: -215px !important;
+      height: 342px !important;
+      right: 0px !important;
+      top: 127px;
+      width: 599px;
     }
     .container {
+      padding-inline: 100px;
       @include mixns.display($display: flex);
       .landing-img {
         order: 2;
+        flex: 1;
         & img {
           width: 600px;
         }
       }
       .landing-content {
+        width: 590px;
         text-align: left;
+        padding: 40px;
+        padding-left: 0;
+        h1 {
+          font-size: 40px;
+        }
         p {
           margin-bottom: 25px;
         }
@@ -72,10 +82,10 @@
           @include mixns.display($display: flex);
           margin-top: 0;
           button {
-            width: 245px;
+            width: 200px;
             padding: 20px;
             margin-top: 20px;
-            margin-left: 0;
+            margin-left: -10px;
             border: solid 2px transparent;
             font-weight: bold;
             font-size: 18px;

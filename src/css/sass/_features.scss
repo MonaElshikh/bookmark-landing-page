@@ -1,10 +1,12 @@
 @use "helpers/mixns";
 .features {
-  h2,
-  p {
-    padding-inline: 50px;
-  }
   text-align: center;
+  .feat-header {
+    h2,
+    p {
+      padding-inline: 50px;
+    }
+  }
   > .feat-tabs {
     padding-top: 60px;
     @include mixns.position($position: relative);
@@ -97,6 +99,16 @@
 /*********************************  Start Featires Media *********************************/
 @include mixns.mediaBreakpoints($min-width: "min-width:992px") {
   .features {
+    .feat-header {
+      width: 720px;
+      margin: 0 auto;
+      h2 {
+        font-size: 35px;
+      }
+      p {
+        font-size: 28px;
+      }
+    }
     .feat-tabs {
       padding-top: 70px;
       > {
@@ -109,6 +121,7 @@
             padding: 0 !important;
             span {
               @include mixns.display($display: inline-block);
+              font-size: 26px;
               padding: 50px;
               &.active {
                 &::after {
@@ -124,16 +137,17 @@
           }
         }
         .tab-content {
-          @include mixns.display($display: flex, $justify: space-around);
+          @include mixns.display($display: flex);
+          margin-top: 100px;
           .img {
             width: 700px;
             max-height: 450px;
             &::before {
               @include mixns.blueBackground(
-                $top: 105px,
+                $top: 21px,
                 $left: -155px,
                 $width: 850px,
-                $height: 350px,
+                $height: 365px,
                 $bgColor: var(--soft-blue),
                 $radius: 210px
               );
@@ -142,7 +156,7 @@
               @include mixns.position(
                 $position: absolute,
                 $top: -75px,
-                $right: -65px
+                $right: -29px
               );
               width: 600px;
               max-width: 100%;
@@ -150,9 +164,10 @@
             }
           }
           .data {
-            padding: 15px 30px;
+            padding: 0 30px;
             text-align: left;
             width: 525px;
+            margin-left: 100px;
             h3 {
               font-size: 30px;
             }
@@ -170,11 +185,26 @@
               font-weight: bold;
             }
           }
-          &:nth-child(3) {
+          &:nth-child(3),
+          &:nth-child(4) {
             .img {
               &::before {
-                left: -200px !important;
+                @include mixns.blueBackground(
+                  $top: 20px,
+                  $left: 0px,
+                  $width: 650px,
+                  $height: 400px,
+                  $bgColor: var(--soft-blue),
+                  $radius: 300px
+                );
               }
+              img {
+                max-height: 475px;
+                left: 80px;
+              }
+            }
+            .data {
+              margin-left: 150px;
             }
           }
         }
