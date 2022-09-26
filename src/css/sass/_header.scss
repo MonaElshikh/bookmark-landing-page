@@ -87,7 +87,7 @@ header {
     .container {
       @include mixns.display($display: flex, $align: center);
       padding-inline: 100px;
-      padding-top: 30px;
+      padding-top: 60px;
       .menu {
         > {
           img {
