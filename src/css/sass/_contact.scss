@@ -118,20 +118,20 @@
           span:nth-child(3) {
             @include mixns.position(
               $position: absolute,
-              $right: 322px,
-              $top: 38px
+              $right: 255px,
+              $top: 30px
             );
           }
           span:nth-child(4) {
             @include mixns.position(
               $position: absolute,
               $left: 0,
-              $top: 95px,
+              $top: 59px,
               $z-index: -1
             );
             background-color: var(--soft-red);
             color: white;
-            width: 75%;
+            width: 61%;
           }
         }
       }

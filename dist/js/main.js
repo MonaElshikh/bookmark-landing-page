@@ -77,6 +77,7 @@ function validateEmail() {
         else {
             email.classList.add("error");
             execMark.className = "d-flex";
+            errorMesg.classList.remove("hide");
             errorMesg.style.display = "block";
             return false;
         }
