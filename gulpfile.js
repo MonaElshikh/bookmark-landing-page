@@ -1,30 +1,37 @@
-const gulp = require('gulp'),
-    sass = require('gulp-sass')(require('sass')),
-    prefixer = require('gulp-autoprefixer'),
-    ts = require('gulp-typescript'),
-    connect = require('gulp-connect'),
-    sourcemaps = require('gulp-sourcemaps'),
-    pug = require('gulp-pug');
+import gulpVar from 'gulp';
+const { task, src, dest, watch, series } = gulpVar;
+import gulpConnect from 'gulp-connect';
+const { server, reload } = gulpConnect;
+import gulpSource from 'gulp-sourcemaps';
+const { init, write } = gulpSource
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
+import prefixer from 'gulp-autoprefixer';
+import ts from 'gulp-typescript';
+import pug from 'gulp-pug';
+import imagemin from 'gulp-imagemin';
+import uglify from 'gulp-uglify';
 //************************************* Start Tasks ******************************************************/
 // html task
-gulp.task("html", () => {
-    return gulp.src('src/pug-js/index.pug')
+task("html", () => {
+    return src('src/pug-js/index.pug')
         .pipe(pug({ pretty: true }))
-        .pipe(gulp.dest('.'));
+        .pipe(dest('.'));
 });
 // css task
-gulp.task("css", () => {
-    return gulp.src('src/css/main.scss')
-        .pipe(sourcemaps.init())
+task("css", () => {
+    return src('src/css/main.scss')
+        .pipe(init())
         .pipe(sass({ outputStyle: "compressed" }).on('error', sass.logError))
         .pipe(prefixer('last 2 versions'))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist/css'))
+        .pipe(write('.'))
+        .pipe(dest('dist/css'))
 })
 // js task
-gulp.task("js", () => {
-    return gulp.src('src/ts/main.ts')
-        .pipe(sourcemaps.init())
+task("js", () => {
+    return src('src/ts/index.ts')
+        .pipe(init())
         .pipe(ts({
             target: "es2016",
             strict: true,
@@ -32,24 +39,32 @@ gulp.task("js", () => {
             removeComments: true,
             outFile: 'main.js',
         }))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist/js'))
+        .pipe(uglify())
+        .pipe(write('.'))
+        .pipe(dest('dist/js'))
+});
+// compress images
+task("imgSquash", () => {
+    return src("src/assets/images/*")
+        .pipe(imagemin())
+        .pipe(dest("dist/images"));
 });
 // connect task
-gulp.task("connect", () => {
-    connect.server({
+task("connect", () => {
+    server({
         root: './dist',
         livereload: true,
         port: 8000
     });
 });
 // watch task
-gulp.task("watch", () => {
-    connect.reload();
-    gulp.watch('src/pug-js/**/*.pug', gulp.series(['html']));
-    gulp.watch('src/css/**/*.scss', gulp.series(['css']));
-    gulp.watch('src/ts/*.ts', gulp.series(['js']));
+task("watch", () => {
+    reload();
+    watch('src/pug-js/**/*.pug', series(['html']));
+    watch('src/css/**/*.scss', series(['css']));
+    watch('src/ts/*.ts', series(['js']));
+    watch('src/assets/images/*', series('imgSquash'));
 });
 
 // Default task is WATCH
-gulp.task('default', gulp.series('watch'));
+task('default', series('imgSquash', 'watch'));
