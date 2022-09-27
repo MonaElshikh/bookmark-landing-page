@@ -58,7 +58,6 @@
           transition: 0.5s;
           > p {
             max-width: 100% !important;
-            font-size: 16px;
           }
         }
       }
@@ -81,12 +80,6 @@
       .data {
         width: 600px;
         margin: 0 auto;
-        h2 {
-          font-size: 35px;
-        }
-        p {
-          font-size: 28px;
-        }
       }
       .questions {
         width: 50vw;

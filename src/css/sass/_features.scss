@@ -102,12 +102,6 @@
     .feat-header {
       width: 720px;
       margin: 0 auto;
-      h2 {
-        font-size: 35px;
-      }
-      p {
-        font-size: 28px;
-      }
     }
     .feat-tabs {
       padding-top: 70px;
@@ -121,7 +115,6 @@
             padding: 0 !important;
             span {
               @include mixns.display($display: inline-block);
-              font-size: 26px;
               padding: 50px;
               &.active {
                 &::after {
@@ -168,11 +161,7 @@
             text-align: left;
             width: 525px;
             margin-left: 100px;
-            h3 {
-              font-size: 30px;
-            }
             p {
-              font-size: 22px;
               margin-bottom: 30px;
             }
             button {

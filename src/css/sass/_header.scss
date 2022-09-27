@@ -20,16 +20,12 @@ header {
           background-color: rgba(hsl(229, 31%, 21%), 0.9);
           text-align: center;
           transition: 0.5s;
-          hr {
-            margin-left: 50%;
-            transform: translateX(-50%);
-            width: 90vw;
-            background-color: var(--grayish-blue);
-          }
+          padding-inline: 15px;
           li {
             position: relative;
-            padding: 20px 0;
+            padding: 30px 0;
             letter-spacing: 8px;
+            border-bottom: solid 1.5px var(--grayish-blue);
             &:first-child {
               width: 100%;
               padding: 40px 0;
@@ -39,20 +35,23 @@ header {
                 $align: center
               );
               img:first-child {
-                margin-left: 35px;
+                margin-left: 20px;
               }
               .close {
-                margin-right: 35px;
+                margin-right: 20px;
               }
             }
-            &.login a {
-              @include mixns.display($display: block);
-              border: solid 2px #fff;
-              border-radius: 10px;
-              width: 90vw;
-              padding: 15px 30px;
-              margin: auto;
-              cursor: pointer;
+            &.login {
+              border-bottom: none;
+              a {
+                @include mixns.display($display: block);
+                border: solid 2px #fff;
+                border-radius: 10px;
+                width: 90vw;
+                padding: 15px 30px;
+                margin: auto;
+                cursor: pointer;
+              }
             }
             &.social {
               @include mixns.display(
@@ -62,6 +61,7 @@ header {
               );
               @include mixns.position($position: absolute, $bottom: 15px);
               width: 100%;
+              border-bottom: none;
               > img {
                 width: 35px;
                 margin-inline: 40px;

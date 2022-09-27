@@ -46,12 +46,6 @@
     .data {
       width: 600px;
       margin: 0 auto;
-      h2 {
-        font-size: 35px;
-      }
-      p {
-        font-size: 28px;
-      }
     }
     .browsers {
       @include mixns.display($display: flex, $justify: space-between);
@@ -72,17 +66,8 @@
           align-self: flex-end;
         }
         > {
-          img:first-child {
-            width: 150px !important;
-          }
           img:nth-child(4) {
             padding: 30px !important;
-          }
-          h3 {
-            font-size: 30px;
-          }
-          p {
-            font-size: 22px;
           }
           button {
             padding: 20px 40px !important;
