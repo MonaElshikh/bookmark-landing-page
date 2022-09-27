@@ -7,13 +7,14 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         include includes/_styles 
         title Bookmark Landing Page | Mona Elshikh 
-    body(role="main")    
+    body    
         include includes/_header
-        include includes/_landing
-        include includes/_features
-        include includes/_downloads
-        include includes/_faq
-        include includes/_contact
+        .main(role="main")
+            include includes/_landing
+            include includes/_features
+            include includes/_downloads
+            include includes/_faq
+            include includes/_contact
         include includes/_footer
         script(src="dist/js/main.js") 
 
