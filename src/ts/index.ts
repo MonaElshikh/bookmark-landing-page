@@ -41,7 +41,7 @@ function clearActiveStyle(
   });
   if (imgsList !== undefined) {
     imgsList.forEach((img) => {
-      img.src = "./src/assets/images/icon-arrow.svg";
+      img.src = "./dist/images/icon-arrow.svg";
     });
   }
 }
@@ -82,7 +82,7 @@ function toggleFAQ() {
       clearActiveStyle(questions, arrowImages);
       question.classList.add("active");
       (question.querySelector(".head > img") as HTMLImageElement).src =
-        "./src/assets/images/up-arrow_icon.svg";
+        "./dist/images/up-arrow_icon.svg";
     });
   });
 }
